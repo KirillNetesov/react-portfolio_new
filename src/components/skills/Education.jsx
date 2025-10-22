@@ -1,5 +1,5 @@
 import React from "react";
-import { education } from "../../data/eduacation";
+import { education } from "@/data/education.js";
 
 const Education = () => {
   return (
@@ -10,8 +10,20 @@ const Education = () => {
           <li className="item" key={index}>
             <span className="year">{item.year}</span>
             <p>
-              {item.degree} - {item.Institution}
+              <strong>{item.degree}</strong> — {item.Institution}
             </p>
+
+            {item.description && (
+              <ul className="experience-description">
+                {item.description
+                  .trim()
+                  .split("\n")
+                  .filter((line) => line.trim() !== "")
+                  .map((line, i) => (
+                    <li key={i}>{line.trim()}</li>
+                  ))}
+              </ul>
+            )}
           </li>
         ))}
       </ul>

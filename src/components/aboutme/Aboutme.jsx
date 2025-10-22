@@ -20,32 +20,42 @@ const Aboutme = () => {
             <div className="about-card">
               <h3>Я Кирилл Нетёсов</h3>
               <h4>
-                SRE специалист <span>занимаюсь разработкой и поддержкой</span>
+                SRE/DevOps/CEO специалист <span></span>
               </h4>
-              <p>
-                Работа в Отделе инноваций, архитектуры и решений (SAI),
-                занимаюсь разработкой программного обеспечения, как web
+                <p>
+                Добрый день, занимаюсь разработкой, поддержкой, атоматизацией
+                и развертыванием различных проектов.
+                Работаю в Отделе инноваций, архитектуры и решений (SAI) в компании
+                Ucell. Занимаемся масштабными проектами такими как мобильное приложение,
+                Website Ucell.uz, Lk.ucell.uz, полная поддержка и работа с troubleshooting.
+                Занимаюсь разработкой программного обеспечения, как web
                 приложений, так и desktop. В мои обязанности входит обслуживание
-                и доработка ПО, когда возникают неполадки. Настройка метрик.
-              </p>
-
+                и доработка ПО, когда возникают неполадки. Настройка метрик, логов.
+                Работаем с кластером <b>Kubernetes</b>, с полным стеком сервисов —
+                <b>CI/CD</b>, <b>ArgoCD</b>, <b>Prometheus</b>, <b>Grafana</b>, 
+                <b>VictoriaMetrics</b>, <b>ClickHouse</b>, <b>Fluent Bit</b>, <b>Kafka</b>, 
+                <b>RabbitMQ</b> и другими инструментами мониторинга и интеграции.
+		</p>
               <ul className="professional-list">
                 <li className="list-item">
-                  <span className="number">1+</span>
-                  <span className="text">опыта в SRE</span>
+                  <span className="number">2+</span>
+                  <span className="text">опыта в SRE/DevOps/CEO</span>
                 </li>
                 <li className="list-item">
                   <span className="number">3+</span>
-                  <span className="text">ведения проектов</span>
+                  <span className="text">Ведения проектов</span>
                 </li>
                 <li className="list-item">
                   <span className="number">5</span>
-                  <span className="text">успешных проектов</span>
+                  <span className="text">Успешных проектов</span>
                 </li>
               </ul>
-
-              <a href="/path/to/your_resume.pdf" download className="btn">
-                Скачать <FaDownload />
+              <a 
+                  href="/files/Kirill_Netesov_Resume.pdf" 
+                          download 
+                          className="btn"
+                   >
+                  Скачать резюме <FaDownload />
               </a>
             </div>
           </div>
