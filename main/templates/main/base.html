@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}SAI{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 50;
+      background-color: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.375rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      min-width: 150px;
+      padding: 0.5rem 0;
+    }
+
+    .dropdown-wrapper:hover .dropdown-content,
+    .dropdown-content:hover {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+<header class="bg-white border-b shadow-sm">
+  <div class="container mx-auto flex items-center justify-between px-4 py-2">
+    <!-- Логотип -->
+    <div class="flex items-center space-x-3">
+    <a href="/"> <img src="{% static 'main/logosai.png' %}" alt="SAI Logo" class="h-16"></a>
+    <span class="text-lg font-bold text-purple-700 whitespace-nowrap">Отдел инноваций,<br> архитектуры и решений.</span>
+</div>
+
+    <!-- Меню -->
+    <nav class="flex space-x-2 ml-4 text-sm relative z-20">
+      <!-- Тарифы -->
+      <div class="relative dropdown-wrapper">
+        <button class="px-4 py-1 rounded-full hover:bg-gray-100 transition bg-white border border-gray-300 shadow-sm">
+          Тарифы
+        </button>
+        <div class="dropdown-content">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Личные</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Корпоративные</a>
+        </div>
+      </div>
+
+      <!-- Услуги -->
+      <div class="relative dropdown-wrapper">
+        <button class="px-4 py-1 rounded-full hover:bg-gray-100 transition bg-white border border-gray-300 shadow-sm">
+          Услуги
+        </button>
+        <div class="dropdown-content">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Интернет</a>
+          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Мессенджеры</a>
+        </div>
+      </div>
+
+      <!-- Ссылки -->
+      <a href="/projects/" class="px-4 py-1 rounded-full hover:bg-gray-100 transition bg-white border border-gray-300 shadow-sm">
+        Проекты
+      </a>
+      <a href="/contact/" class="px-4 py-1 rounded-full hover:bg-gray-100 transition bg-white border border-gray-300 shadow-sm">
+        Контакты
+      </a>
+    </nav>
+
+    <!-- Поиск и кабинет -->
+    <div class="flex items-center space-x-4">
+      <i class="fas fa-search text-gray-500 cursor-pointer hover:text-purple-600"></i>
+      <a href="#" class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+        Личный кабинет
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container mx-auto px-4 py-8">
+  {% block content %}
+  {% endblock %}
+</main>
+
+</body>
+</html>

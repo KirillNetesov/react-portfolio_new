@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  # === Фронтенд (React, Vite) ===
+  web:
+    build:
+      context: .
+    container_name: sai_web
+    env_file: .env
+    volumes:
+      - .:/app
+    expose:
+      - "8000"
+
+  # === Бэкенд (FastAPI) ===
+  backend:
+    build:
+      context: ./backend
+    container_name: sai_backend
+    volumes:
+      - ./backend/app:/app/app
+    expose:
+      - "8000"
+    restart: always
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+  # === NGINX (основной веб-сервер) ===
+  nginx:
+    image: nginx:latest
+    container_name: sai_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /root/saiucell/kirill.netesov/dist:/usr/share/nginx/html/kirill.netesov
+    depends_on:
+      - web
+      - backend
+    restart: always

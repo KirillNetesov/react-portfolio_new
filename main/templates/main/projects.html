@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Проекты | SAI{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl font-semibold text-gray-800 mb-4">Наши проекты</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-lg font-bold text-indigo-600 mb-2">Мониторинг инфраструктуры</h3>
+        <p class="text-gray-700">Система метрик и алертов через Prometheus, Grafana и Alertmanager.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-lg font-bold text-indigo-600 mb-2">Веб-портал для абонентов</h3>
+        <p class="text-gray-700">Современный личный кабинет для клиентов UCELL.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow p-6">
+        <h3 class="text-lg font-bold text-indigo-600 mb-2">CI/CD пайплайн</h3>
+        <p class="text-gray-700">Полностью автоматизированный процесс деплоя с GitLab CI и Kubernetes.</p>
+    </div>
+</div>
+{% endblock %}
